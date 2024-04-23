@@ -17,8 +17,9 @@ This guide will help you set up an alarm in AWS CloudWatch to monitor root user 
 
 ### Step 4: Define the Metric Filter Pattern
 - In the filter pattern box, enter the following pattern to identify root user activity:
+````
 { $.userIdentity.type = "Root" && $.userIdentity.invokedBy NOT EXISTS && $.eventType != "AwsServiceEvent" }
-
+````
 - Click **Next**.
 
 ### Step 5: Set Metric Details
